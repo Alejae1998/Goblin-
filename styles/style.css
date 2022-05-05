@@ -29,10 +29,10 @@ body {
     
     font-family: 'Titillium Web', sans-serif;
     background-color: var(--color2);
-    background-image: url('../assets/cartoon.jpeg');
-    background-repeat: no-repeat;
+    background: lightblue url('../assets/cartoon.jpeg') no-repeat fixed center;
+    /* background-repeat: no-repeat;
     background-position: center;
-    background-attachment: fixed;
+    background-attachment: fixed; */
 
 }
 
