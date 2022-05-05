@@ -1,4 +1,4 @@
-import { renderGoblin } from "./render-utils";
+import { renderGoblin } from './render-utils.js';
 const defeatedNumberEl = document.querySelector('#defeated-number');
 const adventureHPEL = document.querySelector('#adventurer-hp');
 const adventurerImgEl = document.querySelector('#adventurer-img');
@@ -24,7 +24,6 @@ form.addEventListener('submit', (e) => {
 
     goblins.push(newGoblin);
     displayGoblins();
-    
 });
 
 function displayGoblins() {
@@ -34,7 +33,7 @@ function displayGoblins() {
         const goblinEl = renderGoblin(goblin);
 
         goblinEl.addEventListener('click', () => {
-          goblinClickHandler(goblin);
+            goblinClickHandler(goblin);
         });
         goblinListEl.append(goblinEl);
     }
@@ -42,36 +41,37 @@ function displayGoblins() {
 displayGoblins();
 
 function goblinClickHandler() {
-  console.log(`I am clicking on ${goblin.name}`);
+    console.log(`I am clicking on ${goblin.name}`);
 
-  if (goblin.hp === 0) return;
-  if (playerHP === 0) return;
+    if (goblin.hp === 0) return;
+    if (playerHP === 0) return;
 
-  const playerHit = Math.random();
+    const playerHit = Math.random();
 
-  if (playerHit < 0.5) {
-    goblin.hp--;
-    displayGoblins();
-    alert(`You hit ${goblin.name}!`);
+    if (playerHit < 0.5) {
+        goblin.hp--;
+        displayGoblins();
+        alert(`You hit ${goblin.name}!`);
 
-    if (goblin.hp === 0) {
-      defeatedGoblinsCount++;
-      defeatedNumberEl.textContent = defeatedGoblinsCount;
+        if (goblin.hp === 0) {
+            defeatedGoblinsCount++;
+            defeatedNumberEl.textContent = defeatedGoblinsCount;
+        }
+    } else {
+        alert('You missed!');
     }
-  } else {
-    alert('You missed!');
-  }
 
-  const goblinHit = Math.random();
-  if (goblinHit < 1) {
-    playerHP--;
+    const goblinHit = Math.random();
+    if (goblinHit < 1) {
+        playerHP--;
 
-    adventureHPEL.textContent = playerHP;
-    alert(`${goblin.name} hit you!`);
-    if (playerHP === 0) {
-      alert('Game Over 🥲');
+        adventureHPEL.textContent = playerHP;
+        alert(`${goblin.name} hit you!`);
+        if (playerHP === 0) {
+            alert('Game Over 🥲');
+        }
+    } else {
+        alert(`${goblin.name} tried to hit you and missed!!`);
+        adventurerImgEl.classList.add('game-over');
     }
-  } else {
-    alert(`${goblin.name} tried to hit you and missed!!`);
-    adventurerImgEl.classList.add('game-over');
-  })
+}
