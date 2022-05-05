@@ -1,1 +1,6 @@
-/* add home page styles here */
+.goblins {
+    position: relative;
+    bottom: 200px;
+    left: 200px;
+    border: 2px solid black;
+}

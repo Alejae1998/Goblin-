@@ -40,14 +40,15 @@ function displayGoblins() {
 }
 displayGoblins();
 
-function goblinClickHandler() {
+function goblinClickHandler(goblin) {
+
 
     if (goblin.hp === 0) return;
     if (playerHP === 0) return;
 
     const playerHit = Math.random();
 
-    if (playerHit < 0.5) {
+    if (playerHit < 1) {
         goblin.hp--;
         displayGoblins();
         alert(`You hit ${goblin.name}!`);
