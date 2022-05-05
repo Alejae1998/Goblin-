@@ -1,6 +1,26 @@
-.goblins {
-    position: relative;
+.adventurer-hp,
+.defeated-goblins {
+    background-color: #f1dd39;
+    width: 150px;
+    padding: 8px;
+    border-radius: 8px;
+    margin: 16px;
+}
+.adventurer-hp > p,
+.defeated-goblins > p {
+    margin: 0px;
+}
+.evil-side,
+.good-side {
+    margin: 64px 0px;
+}
+
+.goblin {
+    display: flex;
+    margin: 16px 0px;
     bottom: 200px;
     left: 200px;
     border: 2px solid black;
+    background-color: #5ba98f;
+    border-radius: 8px;
 }
