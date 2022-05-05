@@ -7,9 +7,9 @@ const goblinListEl = document.querySelector('.goblins');
 const player = {};
 
 let defeatedGoblinsCount = 0;
-player.hp = 10;
+player.hp = 5;
 let goblins = [
-    { name: 'Cookie', hp: 1 },
+    { name: 'Cookie', hp: 3 },
     { name: 'professor goblin', hp: 4 },
 ];
 
